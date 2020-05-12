@@ -45,6 +45,7 @@ def main():
 
     stocks = ""
 
+    # parse arguments
     if args.biggestloser:
         stocks += " " + biggestloser() + " "
     if args.biggestgainer:
