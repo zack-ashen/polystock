@@ -5,6 +5,7 @@ Display stock prices on polybar...
 
 In the example I have three seperate modules with --biggestgainer on left, --biggestloser in middle, and --mostactive on the right.
 ## Dependencies
+* `python3`
 
 ### Python Modules
 * `yahoo_fin`
