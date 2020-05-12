@@ -4,29 +4,32 @@ import argparse
 
 # Uses yahoo_fin module to get stock prices
 
+# How many decimal place to show in stock price.
+roundNumber = 1
+
 def biggestloser():
     day_losers = si.get_day_losers()
-    output = str(day_losers.at[0, 'Symbol']) + ': ' + str(round(si.get_live_price(day_losers.at[0, 'Symbol']), 1))
+    output = str(day_losers.at[0, 'Symbol']) + ': ' + str(round(si.get_live_price(day_losers.at[0, 'Symbol']), roundNumber))
     return output
 
 def biggestgainer():
     day_gainer = si.get_day_gainers()
-    output = str(day_gainer.at[0, 'Symbol']) + ': ' + str(round(si.get_live_price(day_gainer.at[0, 'Symbol']), 1))
+    output = str(day_gainer.at[0, 'Symbol']) + ': ' + str(round(si.get_live_price(day_gainer.at[0, 'Symbol']), roundNumber))
     return output
 
 def mostactive():
     day_active = si.get_day_most_active()
-    output = str(day_active.at[0, 'Symbol']) + ': ' + str(round(si.get_live_price(day_active.at[0, 'Symbol']), 1))
+    output = str(day_active.at[0, 'Symbol']) + ': ' + str(round(si.get_live_price(day_active.at[0, 'Symbol']), roundNumber))
     return output
 
 def customticker(ticker):
     tickerPrice = si.get_live_price(ticker)
-    output = ticker + ': ' + str(round(tickerPrice, 1))
+    output = ticker + ': ' + str(round(tickerPrice, roundNumber))
     return output
 
 def topcrypto():
     top_crypto = si.get_top_crypto()
-    output = str(top_crypto.at[0, 'Symbol']) + ': ' + str(round(si.get_live_price(top_crypto.at[0, 'Symbol']), 1))
+    output = str(top_crypto.at[0, 'Symbol']) + ': ' + str(round(si.get_live_price(top_crypto.at[0, 'Symbol']), roundNumber))
     return output
 
 def main():

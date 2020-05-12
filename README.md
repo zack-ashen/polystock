@@ -3,7 +3,7 @@ Display stock prices on polybar...
 
 ## Example
 
-
+In the example I have three seperate modules with --biggestgainer on left, --biggestloser in middle, and --mostactive on the right.
 ## Dependencies
 
 ### Python Modules
@@ -27,5 +27,13 @@ label = %output%
 ```
 
 ## Configuration
+
+### polystock.py
+
+```python
+# How many decimal place to show in stock price.
+roundNumber = 1
+```
+
 
 
