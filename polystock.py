@@ -32,7 +32,7 @@ def topcrypto():
 def main():
     parser = argparse.ArgumentParser(description='Displays stock prices outputted in a simplified form for polybar.', epilog='Output will always be in the format of: Biggest Loser, Biggest Gainer, Most Active, Top Crypto, Custom Ticker')
 
-    parser.add_argument('--biggestloser', help='Prints the stock with biggest drop in a given day.', action='store_true')
+    parser.add_argument('--biggestloser', help='Prints the stock with the biggest drop in a given day.', action='store_true')
     parser.add_argument('--biggestgainer', help='Prints the stock with the biggest gain in a given day.', action='store_true')
     parser.add_argument('--mostactive', help='Prints the most active stock in a given day.', action='store_true')
     parser.add_argument('--topcrypto', help='Prints the top cryptocurrency by market cap in a given day.', action='store_true')
