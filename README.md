@@ -1,6 +1,9 @@
 # PolyStock
 Display stock prices on polybar...
 
+## Example
+
+
 ## Dependencies
 
 ### Python Modules
@@ -17,10 +20,12 @@ type = custom/script
 ;--mostactive: Prints the most active stock in a given day.
 ;--topcrypto: Prints the top cryptocurrency by market cap in a given day.
 ;--customticker: Takes a stock ticker (ex. AAPL, GOOGL, VZ) and outputs the live price of that stock.
-exec = ~/polybar-scripts/polystock.py --
+exec = ~/polybar-scripts/polystock.py --biggestloser --biggestgainer --mostactive --topcrypto --customticker AAPL
 # For continuous updates:
 tail = true
 label = %output%
 ```
+
+## Configuration
 
 
