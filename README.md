@@ -2,10 +2,11 @@
 Display stock prices on polybar...
 
 ## Example
+![polystock](screenshots/1.png)
 
-In the example I have three seperate modules with --biggestgainer on left, --biggestloser in middle, and --mostactive on the right.
+In the example I have two seperate modules with `--biggestloser` on left and `--mostactive` on the right.
 ## Dependencies
-* `python3`
+* `python`
 
 ### Python Modules
 * `yahoo_fin`
