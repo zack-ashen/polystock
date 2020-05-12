@@ -2,8 +2,6 @@
 from yahoo_fin import stock_info as si
 import argparse
 
-# Uses yahoo_fin module to get stock prices
-
 # How many decimal place to show in stock price.
 roundNumber = 1
 
@@ -35,6 +33,7 @@ def topcrypto():
 def main():
     parser = argparse.ArgumentParser(description='Displays stock prices outputted in a simplified form for polybar.', epilog='Output will always be in the format of: Biggest Loser, Biggest Gainer, Most Active, Top Crypto, Custom Ticker')
 
+    # add arguments to be called
     parser.add_argument('--biggestloser', help='Prints the stock with the biggest drop in a given day.', action='store_true')
     parser.add_argument('--biggestgainer', help='Prints the stock with the biggest gain in a given day.', action='store_true')
     parser.add_argument('--mostactive', help='Prints the most active stock in a given day.', action='store_true')
