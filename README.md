@@ -11,6 +11,7 @@ In the example I have two seperate modules with `--biggestloser` on left and `--
 ### Python Modules
 * `yahoo_fin`
 * `argparse`
+* `pandas`
 
 ## Module
 ```ini
