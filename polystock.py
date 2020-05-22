@@ -58,7 +58,6 @@ def topcrypto():
     return output
 
 if __name__ == '__main__':
-    """Add arguments for script
     parser = argparse.ArgumentParser(description='Displays stock prices outputted in a simplified form for polybar.', epilog='Output will always be in the format of: Biggest Loser, Biggest Gainer, Most Active, Top Crypto, Custom Ticker')
 
     # add arguments to be called
