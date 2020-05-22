@@ -12,6 +12,7 @@ In the example I have two seperate modules with `--biggestloser` on left and `--
 * `yahoo_fin`
 * `argparse`
 * `pandas`
+* `requests_html`
 
 ## Module
 ```ini
