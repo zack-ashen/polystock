@@ -1,5 +1,5 @@
 # PolyStock
-Display stock prices on polybar...
+A ticker displayer for polybar. Displays the days highest gainer, biggest loser,top crypto or any custom stock ticker.
 
 ## Example
 ![polystock](screenshots/1.png)
