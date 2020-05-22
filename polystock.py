@@ -1,4 +1,15 @@
 #!/usr/bin/env python3
+
+"""
+Polystock
+Author: Zachary Ashen
+Date: May 9th 2020
+Description: A ticker displayer for polybar.
+Displays the days highest gainer, biggest loser,
+top crypto or any custom stock ticker.
+Contact: zachary.h.a@gmail.com
+"""
+
 from yahoo_fin import stock_info as si
 import argparse
 
@@ -6,31 +17,48 @@ import argparse
 roundNumber = 1
 
 def biggestloser():
+    """Returns: stock with the the biggest losses in a given day and
+    its stock price with format: 'TICKER': 'PRICE'."""
+
     day_losers = si.get_day_losers()
     output = str(day_losers.at[0, 'Symbol']) + ': ' + str(round(si.get_live_price(day_losers.at[0, 'Symbol']), roundNumber))
     return output
 
 def biggestgainer():
+    """Returns: stock with the biggest gains in a given day and
+    its stock price with format: 'TICKER': 'PRICE'."""
+
     day_gainer = si.get_day_gainers()
     output = str(day_gainer.at[0, 'Symbol']) + ': ' + str(round(si.get_live_price(day_gainer.at[0, 'Symbol']), roundNumber))
     return output
 
 def mostactive():
+    """Returns: stock with the most activity in a given day and
+    its stock price with format: 'TICKER': 'PRICE'."""
+
     day_active = si.get_day_most_active()
     output = str(day_active.at[0, 'Symbol']) + ': ' + str(round(si.get_live_price(day_active.at[0, 'Symbol']), roundNumber))
     return output
 
 def customticker(ticker):
+    """Returns: stock price and ticker of a stock with format 'TICKER': 'PRICE'.
+    Parameter: the ticker to get a stock price on and to display.
+    Precondition: ticker is a string."""
+
     tickerPrice = si.get_live_price(ticker)
     output = ticker + ': ' + str(round(tickerPrice, roundNumber))
     return output
 
 def topcrypto():
+    """Returns: cryptocurrency with the highest price in a given day and its name
+    with format: 'CRYPTO': 'PRICE'."""
+
     top_crypto = si.get_top_crypto()
     output = str(top_crypto.at[0, 'Symbol']) + ': ' + str(round(si.get_live_price(top_crypto.at[0, 'Symbol']), roundNumber))
     return output
 
-def main():
+if __name__ == '__main__':
+    """Add arguments for script
     parser = argparse.ArgumentParser(description='Displays stock prices outputted in a simplified form for polybar.', epilog='Output will always be in the format of: Biggest Loser, Biggest Gainer, Most Active, Top Crypto, Custom Ticker')
 
     # add arguments to be called
@@ -60,5 +88,3 @@ def main():
         print("You must choose a stock to be displayed! Use --help for more details...")
     else:
         print(stocks)
-
-main()
