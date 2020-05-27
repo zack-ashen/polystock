@@ -57,7 +57,9 @@ def topcrypto():
     output = str(top_crypto.at[0, 'Symbol']) + ': ' + str(round(si.get_live_price(top_crypto.at[0, 'Symbol']), roundNumber))
     return output
 
-if __name__ == '__main__':
+def addArguments():
+    """Adds arguments from ArgParse and parses them to handle arguments"""
+
     parser = argparse.ArgumentParser(description='Displays stock prices outputted in a simplified form for polybar.', epilog='Output will always be in the format of: Biggest Loser, Biggest Gainer, Most Active, Top Crypto, Custom Ticker')
 
     # add arguments to be called
@@ -87,3 +89,6 @@ if __name__ == '__main__':
         print("You must choose a stock to be displayed! Use --help for more details...")
     else:
         print(stocks)
+
+if __name__ == '__main__':
+    addArguments()
