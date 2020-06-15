@@ -73,17 +73,20 @@ def addArguments():
 
     stocks = ""
 
-    # parse arguments
-    if args.biggestloser:
-        stocks += " " + biggestloser() + " "
-    if args.biggestgainer:
-        stocks += " " + biggestgainer() + " "
-    if args.mostactive:
-        stocks += " " + mostactive() + " "
-    if args.topcrypto:
-        stocks += " " + topcrypto() + " "
-    if args.customticker:
-        stocks += " " + customticker(args.customticker) + " "
+    try:
+        # parse arguments
+        if args.biggestloser:
+            stocks += " " + biggestloser() + " "
+        if args.biggestgainer:
+            stocks += " " + biggestgainer() + " "
+        if args.mostactive:
+            stocks += " " + mostactive() + " "
+        if args.topcrypto:
+            stocks += " " + topcrypto() + " "
+        if args.customticker:
+            stocks += " " + customticker(args.customticker) + " "
+    except:
+        stocks = " "
 
     if stocks == "":
         print("You must choose a stock to be displayed! Use --help for more details...")
