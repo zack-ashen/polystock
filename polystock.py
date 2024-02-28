@@ -40,14 +40,17 @@ def mostactive():
     output = str(day_active.at[0, 'Symbol']) + ': ' + str(round(si.get_live_price(day_active.at[0, 'Symbol']), roundNumber))
     return output
 
-def customticker(ticker):
+def customticker(tickers):
     """Returns: stock price and ticker of a stock with format 'TICKER': 'PRICE'.
     Parameter: the ticker to get a stock price on and to display.
-    Precondition: ticker is a string."""
+    Precondition: ticker is a string[]."""
 
-    tickerPrice = si.get_live_price(ticker)
-    output = ticker + ': ' + str(round(tickerPrice, roundNumber))
-    return output
+    output = []
+    for ticker in tickers:
+        tickerPrice = si.get_live_price(ticker)
+        output.append(ticker + ': ' + str(round(tickerPrice, roundNumber)))
+
+    return ' '.join(output)
 
 def topcrypto():
     """Returns: cryptocurrency with the highest price in a given day and its name
@@ -67,7 +70,7 @@ def addArguments():
     parser.add_argument('--biggestgainer', help='Prints the stock with the biggest gain in a given day.', action='store_true')
     parser.add_argument('--mostactive', help='Prints the most active stock in a given day.', action='store_true')
     parser.add_argument('--topcrypto', help='Prints the top cryptocurrency by market cap in a given day.', action='store_true')
-    parser.add_argument('--customticker', help='Display the price of a custom ticker.', type=str)
+    parser.add_argument('--customticker', action='append', help='Display the price of a custom ticker.', type=str)
 
     args = parser.parse_args()
 
